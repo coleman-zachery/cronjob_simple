@@ -53,3 +53,38 @@ az vm stop --resource-group $RG_NAME --name $VM_NAME && \
 az vm delete --resource-group $RG_NAME --name $VM_NAME --yes --no-wait && \
 az group delete --name $RG_NAME --yes --no-wait
 ```
+
+# *Cronjob Commands*
+
+*crontab files are stored in /var/spool/cron/crontabs*
+*besides the default crontab file, users can create crontab files to schedule their own system events*
+
+*edit the crontab file*
+```bash
+crontab -e
+```
+
+*add a cron job*
+```bash
+* * * * * echo $(date) >> ~/logfile.txt
+```
+*`* * * * *`: runs the command every minute*
+*`echo $(date) >> ~/logfile.txt`: writes the current time (date) to a file*
+
+*verify cron job*
+```bash
+crontab -l
+```
+
+*check current time zone*
+```bash
+timedatectl
+```
+
+*run a python script every weekday at 09:00 AM*
+```bash
+0 9 * * 1-5 /usr/bin/python3 /path/to/your_script.py
+```
+*`0 9 * * 1-5`: specifies the job should run at 09:00 AM every weekday*
+*`/usr/bin/python3`: path to python interpreter*
+*`/path/to/your_script.py`: path to python script*
