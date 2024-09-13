@@ -66,7 +66,7 @@ crontab -e
 
 *add a cron job*
 ```bash
-echo '* * * * * echo $(date) >> ~/logfile.txt' | crontab - && \
+echo '* * * * * echo $(date) >> ~/logfile.txt' | crontab -
 ```
 *`* * * * *`: runs the command every minute*
 *`echo $(date) >> ~/logfile.txt`: writes the current time (date) to a file*
@@ -89,7 +89,7 @@ timedatectl
 
 *run a python script every weekday at 09:00 AM*
 ```bash
-echo '0 9 * * 1-5 /usr/bin/python3 /path/to/your_script.py' | crontab - && \
+echo '0 9 * * 1-5 /usr/bin/python3 /path/to/your_script.py' | crontab -
 ```
 *`0 9 * * 1-5`: specifies the job should run at 09:00 AM every weekday*
 *`/usr/bin/python3`: path to python interpreter*
