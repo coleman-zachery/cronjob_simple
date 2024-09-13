@@ -24,7 +24,7 @@ az vm create \
   --name $VM_NAME \
   --image $IMAGE \
   --size $SIZE \
-  --admin-username azureuser \
+  --admin-username $USERNAME \
   --admin-password $PASSWORD && \
 PUBLIC_IP=$(az vm show -d -g $RG_NAME -n $VM_NAME --query publicIps -o tsv) && \
 ssh $USERNAME@$PUBLIC_IP
