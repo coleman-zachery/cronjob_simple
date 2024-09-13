@@ -11,10 +11,10 @@ az login --use-device-code
 RG_NAME=rg_test && \
 VM_NAME=vm_test && \
 USERNAME=azureuser && \
-PASSWORD=<PASSWORD> && \ # input user password
+PASSWORD=<PASSWORD> && \
 LOCATION=eastus && \
-IMAGE=$(az vm image list --publisher Canonical --query "[0].urn" --output tsv)
-SIZE=Standard_B1ls # smallest VM
+IMAGE=$(az vm image list --publisher Canonical --query "[0].urn" --output tsv) && \
+SIZE=Standard_B1ls && \
 az group create \
   --location $LOCATION \
   --name $RG_NAME && \
