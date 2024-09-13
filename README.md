@@ -1,7 +1,8 @@
 # Simple VM Cronjob in Azure
 
-*login to your azure portal subscription from terminal*
+*install aure-cli and login to your azure portal subscription from terminal*
 ```bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash && \
 az login --use-device-login
 ```
 
