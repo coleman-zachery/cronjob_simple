@@ -33,3 +33,18 @@ ssh $USERNAME@$PUBLIC_IP
 ```bash
 echo '* * * * * echo $(date) >> ~/logfile.txt' | crontab -
 ```
+
+*wait a few minutes before re-logging in to vm*
+```bash
+exit
+ssh $USERNAME@$PUBLIC_IP
+cat ~/logfile.txt
+```
+
+*exit and stop the vm, clean-up resources*
+```bash
+exit
+az vm stop --resource-group $RG_NAME --name $VM_NAME && \
+az vm delete --resource-group $RG_NAME --name $VM_NAME --yes --no-wait && \
+az group delete --name $RG_NAME --yes --no-wait
+```
