@@ -81,8 +81,9 @@ crontab -l
 crontab -r
 ```
 
-*check current time zone*
+*set and check current time zone*
 ```bash
+sudo timedatectl set-timezone America/New_York
 timedatectl
 ```
 
