@@ -14,7 +14,7 @@ USERNAME=azureuser && \
 PASSWORD=<PASSWORD> && \
 LOCATION=eastus && \
 IMAGE=$(az vm image list --publisher Canonical --query "[0].urn" --output tsv)
-SIZE=Standard_B1ls
+SIZE=Standard_B1ls # smallest VM
 az group create \
   --location $LOCATION \
   --name $RG_NAME && \
