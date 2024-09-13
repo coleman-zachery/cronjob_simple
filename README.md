@@ -29,7 +29,7 @@ PUBLIC_IP=$(az vm show -d -g $RG_NAME -n $VM_NAME --query publicIps -o tsv) && \
 ssh $USERNAME@$PUBLIC_IP
 ```
 
-*creates a cronjob that writes the datetime everyminute to a text file*
+*creates a cronjob that writes the datetime every minute to a text file*
 ```bash
 echo '* * * * * echo $(date) >> ~/logfile.txt' | crontab -
 ```
@@ -38,7 +38,7 @@ echo '* * * * * echo $(date) >> ~/logfile.txt' | crontab -
 ```bash
 exit
 ssh $USERNAME@$PUBLIC_IP
-cat ~/logfile.txt
+cat ~/logfile.txt # should display several datetimes at minute increments
 ```
 
 *exit and stop the vm, clean-up resources*
