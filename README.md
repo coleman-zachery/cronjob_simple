@@ -1,5 +1,4 @@
-# cronjob_simple
-simple tutorial for cronjob in azure
+# Simple VM Cronjob in Azure
 
 ```bash
 az login --use-device-login
