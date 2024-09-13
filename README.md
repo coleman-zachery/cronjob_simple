@@ -54,7 +54,7 @@ az vm delete --resource-group $RG_NAME --name $VM_NAME --yes --no-wait && \
 az group delete --name $RG_NAME --yes --no-wait
 ```
 
-# *Cronjob Commands*
+# Cronjob Commands
 
 *crontab files are stored in /var/spool/cron/crontabs*
 *besides the default crontab file, users can create crontab files to schedule their own system events*
