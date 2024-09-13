@@ -76,6 +76,11 @@ crontab -e
 crontab -l
 ```
 
+*clear all cron jobs*
+```bash
+crontab -r
+```
+
 *check current time zone*
 ```bash
 timedatectl
