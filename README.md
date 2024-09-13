@@ -32,19 +32,23 @@ ssh $USERNAME@$PUBLIC_IP
 
 *creates a cronjob that writes the datetime every minute to a text file*
 ```bash
-echo '* * * * * echo $(date) >> ~/logfile.txt' | crontab -
+echo '* * * * * echo $(date) >> ~/logfile.txt' | crontab - && \
+exit
 ```
 
 *wait a few minutes before re-logging in to vm*
 ```bash
-exit
 ssh $USERNAME@$PUBLIC_IP
-cat ~/logfile.txt # should display several datetimes at minute increments
 ```
 
-*exit and stop the vm, clean-up resources*
+*display datetime logs*
 ```bash
+cat ~/logfile.txt # should display several datetimes at minute increments && \
 exit
+```
+
+*stop the vm and clean-up resources*
+```bash
 az vm stop --resource-group $RG_NAME --name $VM_NAME && \
 az vm delete --resource-group $RG_NAME --name $VM_NAME --yes --no-wait && \
 az group delete --name $RG_NAME --yes --no-wait
