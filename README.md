@@ -3,7 +3,7 @@
 *install aure-cli and login to your azure portal subscription from terminal*
 ```bash
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash && \
-az login --use-device-login
+az login --use-device-code
 ```
 
 *create/ssh test resource group and virtual machine*
