@@ -26,3 +26,8 @@ az vm create \
 PUBLIC_IP=$(az vm show -d -g $RG_NAME -n $VM_NAME --query publicIps -o tsv) && \
 ssh $USERNAME@$PUBLIC_IP
 ```
+
+*creates a cronjob that writes the datetime everyminute to a text file*
+```bash
+echo '* * * * * echo $(date) >> ~/logfile.txt' | crontab -
+```
