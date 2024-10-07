@@ -93,7 +93,7 @@ echo '0 9 * * 1-5 /usr/bin/python3 /path/to/your_script.py >/dev/null 2>&1' | cr
 ```
 *`0 9 * * 1-5`: specifies the job should run at 09:00 AM every weekday*
 *`/usr/bin/python3`: path to python interpreter*
-*`/path/to/your_script.py`: path to python script (must use absolute path, no ~)*
+*`/path/to/your_script.py`: path to python script*
 *`>/dev/null 2>&1`: avoids Mail Transfer Agent (MTA) script resolution issues by suppressing standard error output*
 
 *check error logs*
